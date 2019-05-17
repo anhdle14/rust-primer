@@ -25,7 +25,7 @@ fn main() {
             .expect("Failed to read line"); // Handling potential failure with the Result type.
 
         // Although we declared guess before. But rust allowed us to shadowing.
-        let guess: u8 = guess.trim().parse() {
+        let guess: u8 = match guess.trim().parse() {
             Ok(num) => num,
             Err(_) => continue,
         }; // Although rustup using u32 but that is inefficient. u32 is way bigger than what we needed.
